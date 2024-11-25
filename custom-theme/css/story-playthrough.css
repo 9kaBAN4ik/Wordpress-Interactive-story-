@@ -1,0 +1,161 @@
+/* CSS Styles for Story Playthrough */
+header nav {
+    background-color: #333; /* Цвет фона для навигации (по желанию) */
+    padding: 10px; /* Отступы вокруг навигации */
+}
+
+header nav ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    display: flex; /* Используем flexbox для горизонтального выравнивания */
+    justify-content: center; /* Выравнивание по центру (по желанию) */
+}
+
+header nav ul li {
+    margin: 0 15px; /* Отступы между элементами списка */
+}
+
+header nav ul li a {
+    color: white; /* Цвет текста для ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 16px; /* Размер шрифта (по желанию) */
+    display: block; /* Для обеспечения кликабельной зоны вокруг ссылки */
+    padding: 5px 10px; /* Отступы вокруг текста ссылки */
+}
+
+header nav ul li a:hover {
+    background-color: #575757; /* Цвет фона при наведении (по желанию) */
+    border-radius: 4px; /* Скругление углов (по желанию) */
+}
+
+.story-playthrough-container {
+    max-width: 1000px; /* Увеличим максимальную ширину */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#story-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.content-and-sidebar {
+    display: flex; /* Используем flexbox для размещения контента и боковой панели */
+}
+
+#story-content {
+    flex: 3; /* Основной контент занимает 3 части */
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    flex: 1; /* Боковая панель занимает 1 часть */
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px; /* Отступ слева для боковой панели */
+}
+
+.facts-and-resources {
+    display: flex; /* Используем flexbox для размещения фактов и ресурсов рядом друг с другом */
+    gap: 20px; /* Промежуток между секциями фактов и ресурсов */
+}
+
+.facts-and-resources > div {
+    flex: 1; /* Каждая секция занимает равное пространство */
+}
+
+#player-facts, #resources-display {
+    margin-bottom: 20px;
+}
+
+#next-paragraph {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333; /* Цвет фона футера */
+    color: #fff; /* Цвет текста */
+    padding: 20px 0; /* Внешние отступы футера сверху и снизу */
+    text-align: center; /* Центрирование текста */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Расположение элементов по краям футера */
+    max-width: 1200px;
+    margin: 0 auto; /* Выравнивание футера по центру экрана */
+    padding: 0 20px; /* Внутренние отступы для футера */
+}
+
+.footer-left, .footer-right {
+    flex: 1; /* Растягивание колонок футера */
+}
+
+.footer-right ul {
+    list-style: none; /* Убираем маркеры у списка */
+    padding: 0; /* Убираем внутренние отступы у списка */
+    margin: 0; /* Убираем внешние отступы у списка */
+    text-align: right; /* Выравнивание текста списка по правому краю */
+}
+
+.footer-right ul li {
+    display: inline; /* Отображение элементов списка в одной строке */
+    margin-left: 15px; /* Отступ между пунктами списка */
+}
+
+.footer-right ul li a {
+    color: #fff; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.footer-right ul li a:hover {
+    text-decoration: underline; /* Подчеркивание ссылок при наведении */
+}
+
+footer p {
+    margin: 0; /* Убираем отступы у абзаца */
+}
+
+.action-container {
+    display: inline-block;
+    margin: 10px; /* Увеличиваем отступы для большей кнопки */
+    position: relative;
+}
+
+.action-container button {
+    font-size: 18px; /* Увеличиваем размер шрифта для кнопок */
+    padding: 10px 20px; /* Увеличиваем отступы внутри кнопок */
+    position: relative;
+    padding-right: 30px; /* Пространство для значка подсказки */
+}
+
+.tooltip-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    color: blue;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em; /* Увеличиваем размер значка */
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Структура футера на маленьких экранах */
+        text-align: center; /* Центрирование текста на маленьких экранах */
+    }
+
+    .footer-right ul {
+        text-align: center; /* Центрирование списка на маленьких экранах */
+    }
+
+    .footer-right ul li {
+        display: block; /* Вывод элементов списка по одному в строке */
+        margin: 10px 0; /* Отступы между элементами списка */
+    }
+}

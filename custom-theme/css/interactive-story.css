@@ -1,0 +1,521 @@
+header nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 5px 10px;
+}
+
+header nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+.interactive-story-constructor {
+    max-width: 1200px; /* Установим ограничение по ширине */
+    margin: auto;
+    padding: 20px;
+
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Стиль для вкладок */
+.tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 10%; /* Ширина для вкладок */
+    float: left; /* Чтобы вкладки всегда оставались слева */
+}
+
+.tab-link {
+    padding: 10px 20px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Полная ширина таба */
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.tab-link.active {
+    background-color: #555;
+    color: #fff;
+}
+
+/* Контент вкладок */
+.tab-content {
+    display: none;
+    margin-left: 22%; /* Отодвигаем контент от вкладок */
+    padding-top: 10px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Центрирование кнопок в контенте вкладок */
+.tab-content .btn {
+    display: block;
+    margin: 20px auto; /* Центрирование кнопок */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#story-paragraphs .paragraph,
+#fact-groups .fact-group,
+#resource-groups .resource-group,
+#formulas-list .formula {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+#add-paragraph-btn, #add-fact-group-btn, #add-resource-group-btn {
+    margin-left: 250px; /* Сдвиг кнопок левее */
+}
+/* Стили для параграфов */
+.story-paragraph {
+    margin-bottom: 20px;
+}
+
+/* Убираем отступы между блоками действий и автоизменений */
+.actions-container, .auto-changes-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Элементы могут переноситься на новую строку */
+    gap: 10px; /* Расстояние между элементами */
+}
+
+/* Ограничение количества элементов в строке до 3 */
+.action-form {
+    flex: 1 1 calc(33.33% - 10px); /* Каждый элемент занимает одну треть строки */
+    box-sizing: border-box; /* Учитываем отступы */
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+    margin-bottom: 10px;
+}
+
+/* Адаптивность для устройств */
+@media (max-width: 992px) {
+    .action-form {
+        flex: 1 1 calc(50% - 10px); /* Для экранов до 992px - 2 элемента в строке */
+    }
+}
+
+@media (max-width: 576px) {
+    .action-form {
+        flex: 1 1 100%; /* Для экранов до 576px - 1 элемент в строке */
+    }
+}
+
+/* Стили для формы действия */
+.action-form .form-group {
+    flex: 1; /* Каждый элемент занимает доступную ширину */
+    margin-right: 10px; /* Отступ между элементами */
+}
+
+/* Стили для кнопки удаления с иконкой корзины */
+.action-form .remove-action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 0;
+    padding: 0;
+}
+
+.action-form .remove-action-btn::before {
+    content: "\f1f8"; /* Иконка корзины из Font Awesome */
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    font-size: 16px;
+    color: red;
+}
+
+/* Общие стили для кнопок */
+button {
+    margin-bottom: 10px; /* Отступ снизу для всех кнопок */
+}
+
+.btn-secondary {
+    margin-bottom: 0; /* Убираем отступ снизу для кнопок "Добавить" */
+}
+/* Стили для контейнера автоизменений */
+.auto-change {
+    display: flex;
+    align-items: center; /* Выравниваем элементы по вертикали */
+    gap: 10px; /* Отступы между элементами */
+    margin-bottom: 10px;
+    flex-wrap: nowrap; /* Запрещаем перенос элементов на следующую строку */
+}
+
+/* Ограничение ширины выпадающего списка */
+.auto-change .form-group {
+    flex-grow: 1; /* Элемент будет расширяться, чтобы занимать оставшееся пространство */
+    min-width: 200px; /* Минимальная ширина для выпадающего списка */
+    margin-right: 10px; /* Отступ между списком и другими элементами */
+}
+
+/* Кнопка удаления автоизменения */
+.auto-change .remove-auto-change-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: auto; /* Сдвигаем кнопку удаления в крайний правый угол */
+}
+
+/* Параметры автоизменения */
+.auto-change-parameters {
+    flex: 1 1 100%;
+    margin-top: 10px;
+}
+/* Основной контейнер группы фактов */
+.fact-group {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Строка заголовка и основных параметров группы фактов */
+.fact-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px; /* Отступы между элементами */
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+}
+
+/* Заголовок группы фактов */
+.fact-group h4 {
+    margin: 0;
+    flex: 1; /* Занимает всё доступное пространство */
+}
+
+/* Кнопка удаления с иконкой корзины */
+.remove-fact-group-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.remove-fact-group-btn i {
+    font-size: 20px;
+    color: red; /* Красная иконка корзины */
+}
+#illustration-container {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+#graph-container {
+    width: 100%;
+    height: 100%;
+}
+
+.node circle {
+    fill: #69b3a2;
+}
+
+.link {
+    stroke: #999;
+    stroke-width: 2px;
+}
+
+/* Параметры группы фактов в одну строку */
+.fact-group-parameters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+}
+
+/* Поля ввода и select внутри группы */
+.fact-group-parameters .form-control {
+    flex: 1;
+    min-width: 120px;
+}
+
+/* Поля для добавления факта в одну строку */
+.facts-container .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+}
+
+/* Поле ввода факта */
+.fact-name {
+    flex: 2;
+    min-width: 150px;
+}
+
+/* Выпадающий список для доступа */
+.facts-container select {
+    flex: 1;
+    min-width: 100px;
+}
+
+/* Кнопка "Добавить факт" */
+.add-fact-to-group-btn {
+    margin-bottom: 10px;
+}
+/* Контейнер для одного факта, поля идут в одну строку */
+.fact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+}
+
+/* Поле ввода и select в одном ряду */
+.fact-item .form-group {
+    flex: 1; /* Растягивается по ширине */
+    min-width: 120px;
+}
+
+/* Поле для имени факта */
+.fact-name {
+    flex: 2; /* Широкое поле для ввода */
+    min-width: 150px;
+}
+/* Контейнер для заголовка группы и кнопки удаления */
+.resource-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Инпут растягивается по ширине */
+.resource-group-header .form-group {
+    flex: 1;
+    margin: 0;
+}
+
+/* Стили для иконки корзины */
+.remove-resource-group-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.remove-resource-group-btn i {
+    font-size: 20px;
+    color: red;
+}
+/* Контейнер для каждого расходника */
+.resource-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Название и количество расходника растягиваются */
+.resource-item input {
+    flex: 1;
+    margin: 0;
+}
+
+/* Стили для кнопки с иконкой удаления */
+.remove-resource-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.remove-resource-btn i {
+    font-size: 20px;
+    color: red;
+}
+
+.btn {
+    margin-left: -20px; /* Сдвиг всех кнопок влево */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050 !important;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15% auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+.modal-backdrop {
+    z-index: 1040 !important;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.max-image {
+    max-width: 150px;
+    max-height: 84px;
+    width: auto;
+    height: auto;
+}
+
+.paragraph-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+/* Контейнер для списка параграфов */
+#paragraph-list {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 200px;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.footer-right ul li {
+    display: inline;
+    margin-left: 15px;
+}
+
+.footer-right ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-right ul li a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-right ul {
+        text-align: center;
+    }
+
+    .footer-right ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}

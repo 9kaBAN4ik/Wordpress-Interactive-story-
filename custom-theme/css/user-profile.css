@@ -1,0 +1,199 @@
+header nav {
+    background-color: #333; /* Цвет фона для навигации (по желанию) */
+    padding: 10px; /* Отступы вокруг навигации */
+}
+
+header nav ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    display: flex; /* Используем flexbox для горизонтального выравнивания */
+    justify-content: center; /* Выравнивание по центру (по желанию) */
+}
+
+header nav ul li {
+    margin: 0 15px; /* Отступы между элементами списка */
+}
+
+header nav ul li a {
+    color: white; /* Цвет текста для ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 16px; /* Размер шрифта (по желанию) */
+    display: block; /* Для обеспечения кликабельной зоны вокруг ссылки */
+    padding: 5px 10px; /* Отступы вокруг текста ссылки */
+}
+
+header nav ul li a:hover {
+    background-color: #575757; /* Цвет фона при наведении (по желанию) */
+    border-radius: 4px; /* Скругление углов (по желанию) */
+}
+.container {
+    display: flex;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.profile-sidebar {
+    width: 20%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.profile-navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-navigation li {
+    margin-bottom: 10px;
+}
+
+.profile-navigation a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile-content {
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    margin-right: 20px;
+}
+
+.profile-avatar img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-contacts, .profile-posts, .profile-reviews, .profile-purchases, .profile-settings {
+    margin-bottom: 20px;
+}
+
+.profile-contacts h3, .profile-posts h3, .profile-reviews h3, .profile-purchases h3, .profile-settings h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.profile-contacts p, .profile-posts p, .profile-reviews p, .profile-purchases p {
+    margin-bottom: 10px;
+}
+
+.profile-posts h4, .profile-reviews h4 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.profile-posts h4 a, .profile-reviews h4 a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.profile-posts h4 a:hover, .profile-reviews h4 a:hover {
+    text-decoration: underline;
+}
+
+.profile-settings label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile-settings input[type="email"], .profile-settings input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.profile-settings input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-settings input[type="submit"]:hover {
+    background-color: #005f8d;
+}
+/* Основные стили для футера */
+footer {
+    background-color: #333; /* Цвет фона футера */
+    color: #fff; /* Цвет текста */
+    padding: 20px 0; /* Внешние отступы футера сверху и снизу */
+    text-align: center; /* Центрирование текста */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Расположение элементов по краям футера */
+    max-width: 1200px;
+    margin: 0 auto; /* Выравнивание футера по центру экрана */
+    padding: 0 20px; /* Внутренние отступы для футера */
+}
+
+.footer-left, .footer-right {
+    flex: 1; /* Растягивание колонок футера */
+}
+
+.footer-right ul {
+    list-style: none; /* Убираем маркеры у списка */
+    padding: 0; /* Убираем внутренние отступы у списка */
+    margin: 0; /* Убираем внешние отступы у списка */
+    text-align: right; /* Выравнивание текста списка по правому краю */
+}
+
+.footer-right ul li {
+    display: inline; /* Отображение элементов списка в одной строке */
+    margin-left: 15px; /* Отступ между пунктами списка */
+}
+
+.footer-right ul li a {
+    color: #fff; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.footer-right ul li a:hover {
+    text-decoration: underline; /* Подчеркивание ссылок при наведении */
+}
+
+/* Стиль для текста копирайта */
+footer p {
+    margin: 0; /* Убираем отступы у абзаца */
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Структура футера на маленьких экранах */
+        text-align: center; /* Центрирование текста на маленьких экранах */
+    }
+
+    .footer-right ul {
+        text-align: center; /* Центрирование списка на маленьких экранах */
+    }
+
+    .footer-right ul li {
+        display: block; /* Вывод элементов списка по одному в строке */
+        margin: 10px 0; /* Отступы между элементами списка */
+    }
+}

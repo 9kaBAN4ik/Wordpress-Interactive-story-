@@ -1,0 +1,15 @@
+.paragraph-item {
+    margin-bottom: 20px;
+}
+
+.actions-container {
+    margin-top: 10px;
+}
+
+.actions-list .action-item {
+    margin-bottom: 10px;
+}
+
+#add-paragraph, .add-action, .remove-action {
+    margin-top: 10px;
+}

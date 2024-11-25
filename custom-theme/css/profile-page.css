@@ -1,0 +1,396 @@
+/* Основные стили для навигации */
+header nav {
+    background-color: #444; /* Темный фон для навигации */
+    padding: 15px; /* Увеличенные отступы */
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 20px; /* Увеличенные отступы между элементами */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Увеличенный шрифт */
+    display: block;
+    padding: 10px 15px; /* Увеличенные отступы для кнопок */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s; /* Плавный переход для фона */
+}
+
+header nav ul li a:hover {
+    background-color: #575757; /* Цвет фона при наведении */
+}
+
+/* Контейнер профиля */
+.container {
+    display: flex;
+    padding: 20px;
+    background-color: #f4f4f4; /* Цвет фона для контейнера */
+}
+
+/* Стили для верхней панели профиля */
+.profile-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 15px 30px; /* Увеличенные отступы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Более выраженная тень */
+}
+
+.logo img {
+    height: 60px; /* Увеличенная высота логотипа */
+}
+
+.top-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.top-navigation li {
+    margin: 0 20px; /* Увеличенные отступы между элементами навигации */
+}
+
+.top-navigation a {
+    text-decoration: none;
+    color: #007bff; /* Цвет ссылок */
+    font-weight: bold;
+    position: relative; /* Для добавления псевдоэлементов */
+}
+
+.top-navigation a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #007bff;
+    transition: width 0.3s; /* Плавный переход */
+}
+
+.top-navigation a:hover::after {
+    width: 100%; /* Подчеркивание при наведении */
+}
+
+.top-icons {
+    display: flex;
+}
+
+.top-icons a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #343a40;
+    font-size: 20px; /* Увеличенный размер шрифта для иконок */
+    transition: color 0.3s; /* Плавный переход для цвета */
+}
+
+.top-icons a:hover {
+    color: #007bff; /* Цвет иконок при наведении */
+}
+
+/* Боковое меню профиля */
+.profile-sidebar {
+    width: 20%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    border-radius: 5px; /* Закругленные углы для бокового меню */
+}
+
+.profile-navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-navigation li {
+    margin-bottom: 15px; /* Увеличенные отступы между элементами навигации */
+}
+
+.profile-navigation a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px; /* Добавление отступов для ссылок */
+    border-radius: 4px; /* Закругленные углы */
+    transition: background-color 0.3s; /* Плавный переход */
+}
+
+.profile-navigation a:hover {
+    background-color: #eaeaea; /* Цвет фона при наведении */
+}
+
+/* Основной контент профиля */
+.profile-content {
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Закругленные углы для основного контента */
+}
+
+/* Заголовок профиля */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    position: relative;
+    display: inline-block;
+}
+
+#profile-avatar-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #007bff; /* Граница вокруг аватара */
+}
+
+.avatar-update {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#update-avatar-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+#confirm-avatar-update {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: none;
+    cursor: pointer;
+}
+
+.profile-avatar:hover .avatar-update {
+    opacity: 1;
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+.profile-section {
+    display: none;
+}
+#notifications-count {
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    display: inline-block;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#notifications-tab.has-new-notifications {
+    background-color: #f44336; /* Красный для вкладки с уведомлениями */
+}
+
+
+.friend-request.unread {
+    background-color: #f9f9f9; /* Подсветка для непрочитанных запросов в друзья */
+    font-weight: bold;
+}
+
+.profile-contacts, .profile-posts, .profile-reviews, .profile-works, .profile-purchases, .profile-settings {
+    margin-bottom: 20px;
+}
+
+.profile-contacts h3, .profile-posts h3, .profile-reviews h3, .profile-works h3, .profile-purchases h3, .profile-settings h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #007bff; /* Подчеркивание заголовков */
+    padding-bottom: 5px; /* Отступ снизу для заголовков */
+}
+
+.profile-posts h4, .profile-reviews h4, .profile-works h4 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.profile-posts h4 a, .profile-reviews h4 a, .profile-works h4 a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.profile-posts h4 a:hover, .profile-reviews h4 a:hover, .profile-works h4 a:hover {
+    text-decoration: underline; /* Подчеркивание ссылок */
+}
+
+/* Стили для форм настроек профиля */
+.profile-settings label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profile-settings input[type="email"], .profile-settings input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Увеличенные отступы между полями */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Закругленные углы для полей ввода */
+    transition: border 0.3s; /* Плавный переход для границ */
+}
+
+.profile-settings input[type="email"]:focus, .profile-settings input[type="password"]:focus {
+    border: 1px solid #0073aa; /* Цвет границы при фокусе */
+}
+
+.profile-settings input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 5px; /* Закругленные углы для кнопки */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Плавный переход для фона */
+}
+
+.profile-settings input[type="submit"]:hover {
+    background-color: #005f8d; /* Цвет кнопки при наведении */
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.comment-item {
+    border-bottom: 1px solid #ddd; /* Разделитель между комментариями */
+    padding: 10px 0;
+}
+
+.replies-list {
+    margin-left: 20px; /* Отступ для ответов */
+    border-left: 2px solid #ccc; /* Вертикальная линия для визуализации вложенности */
+    padding-left: 10px;
+}
+
+.reply-item {
+    background-color: #f9f9f9; /* Светлый фон для ответов */
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.footer-right ul li {
+    display: inline;
+    margin-left: 15px;
+}
+
+.footer-right ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-right ul li a:hover {
+    text-decoration: underline; /* Подчеркивание для ссылок в футере */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-right ul {
+        text-align: center; /* Центрирование списка в футере */
+    }
+
+    .footer-right ul li {
+        display: block;
+        margin: 10px 0; /* Увеличенные отступы между элементами в футере */
+    }
+}

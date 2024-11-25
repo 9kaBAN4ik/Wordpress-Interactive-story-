@@ -1,0 +1,215 @@
+/* Общие стили для навигационного меню */
+header nav {
+    background-color: #333; /* Цвет фона для навигации (по желанию) */
+    padding: 10px; /* Отступы вокруг навигации */
+}
+
+header nav ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    display: flex; /* Используем flexbox для горизонтального выравнивания */
+    justify-content: center; /* Выравнивание по центру (по желанию) */
+}
+
+header nav ul li {
+    margin: 0 15px; /* Отступы между элементами списка */
+}
+
+header nav ul li a {
+    color: white; /* Цвет текста для ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 16px; /* Размер шрифта (по желанию) */
+    display: block; /* Для обеспечения кликабельной зоны вокруг ссылки */
+    padding: 5px 10px; /* Отступы вокруг текста ссылки */
+}
+
+header nav ul li a:hover {
+    background-color: #575757; /* Цвет фона при наведении (по желанию) */
+    border-radius: 4px; /* Скругление углов (по желанию) */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-section {
+    /* Удаляем фоновое изображение */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-color: #0073aa; /* Добавляем цвет фона по желанию */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.content-section {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.story-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.story-item p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.btn-secondary {
+    padding: 8px 15px;
+    background-color: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Изменение цвета кнопки регистрации в модальном окне */
+.modal .btn-secondary {
+    background-color: #000; /* Черный цвет фона */
+    color: #fff; /* Белый цвет текста */
+}
+/* Основные стили для футера */
+footer {
+    background-color: #333; /* Цвет фона футера */
+    color: #fff; /* Цвет текста */
+    padding: 20px 0; /* Внешние отступы футера сверху и снизу */
+    text-align: center; /* Центрирование текста */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Расположение элементов по краям футера */
+    max-width: 1200px;
+    margin: 0 auto; /* Выравнивание футера по центру экрана */
+    padding: 0 20px; /* Внутренние отступы для футера */
+}
+
+.footer-left, .footer-right {
+    flex: 1; /* Растягивание колонок футера */
+}
+
+.footer-right ul {
+    list-style: none; /* Убираем маркеры у списка */
+    padding: 0; /* Убираем внутренние отступы у списка */
+    margin: 0; /* Убираем внешние отступы у списка */
+    text-align: right; /* Выравнивание текста списка по правому краю */
+}
+
+.footer-right ul li {
+    display: inline; /* Отображение элементов списка в одной строке */
+    margin-left: 15px; /* Отступ между пунктами списка */
+}
+
+.footer-right ul li a {
+    color: #fff; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.footer-right ul li a:hover {
+    text-decoration: underline; /* Подчеркивание ссылок при наведении */
+}
+
+/* Стиль для текста копирайта */
+footer p {
+    margin: 0; /* Убираем отступы у абзаца */
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Структура футера на маленьких экранах */
+        text-align: center; /* Центрирование текста на маленьких экранах */
+    }
+
+    .footer-right ul {
+        text-align: center; /* Центрирование списка на маленьких экранах */
+    }
+
+    .footer-right ul li {
+        display: block; /* Вывод элементов списка по одному в строке */
+        margin: 10px 0; /* Отступы между элементами списка */
+    }
+}
